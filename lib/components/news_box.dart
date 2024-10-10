@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_news_app/components/bottom_sheet.dart';
@@ -52,17 +50,17 @@ class NewsBox extends StatelessWidget {
                   placeholder: (context, url) => CircularProgressIndicator(
                     color:AppColors.primary,
                   ),
-                  errorWidget:(context, url, error) => Icon(Icons.error),
+                  errorWidget:(context, url, error) => const Icon(Icons.error),
                 ),
                 
-                SizedBox(width:8),
+                const SizedBox(width:8),
                 
                 Expanded(
                   child: Column(
                     crossAxisAlignment : CrossAxisAlignment.start,
                     mainAxisAlignment : MainAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       BoldText(
@@ -70,7 +68,7 @@ class NewsBox extends StatelessWidget {
                         color: AppColors.white, 
                         size: 16,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height : 5 ,
                       ),
                       ModifiedText(

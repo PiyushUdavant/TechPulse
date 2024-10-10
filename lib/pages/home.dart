@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:tech_news_app/backend/functions.dart';
 import 'package:tech_news_app/components/news_box.dart';
@@ -32,8 +30,8 @@ class _HomeState extends State<Home> {
       appBar: const CustomAppBar(),
       body: Column(
         children:[
-          Divider(color:Colors.white24,),
-          s.SearchBar(),
+          const Divider(color:Colors.white24,),
+          const s.SearchBar(),
           Expanded(
             child: SizedBox(
               width : w ,

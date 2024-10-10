@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_news_app/backend/functions.dart';
@@ -23,8 +21,8 @@ class _SearchBarState extends State<SearchBar> {
         Expanded(
           child: Container(
             height: 50,
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.only(left:20),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.only(left:20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color:AppColors.darkgrey,
@@ -33,7 +31,7 @@ class _SearchBarState extends State<SearchBar> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children:[
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Expanded(
                   child: TextField(
                     controller : SearchBar.searchController,

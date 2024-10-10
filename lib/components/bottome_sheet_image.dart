@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:tech_news_app/utils/text.dart';
 
@@ -18,7 +16,7 @@ class BottomeSheetImage extends StatelessWidget {
       child: Stack(
         children:[
           Container(
-            foregroundDecoration: BoxDecoration(
+            foregroundDecoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors:[Colors.black,Colors.transparent],
                 begin : Alignment.bottomCenter,
@@ -26,7 +24,7 @@ class BottomeSheetImage extends StatelessWidget {
               )
             ),
             decoration:BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
               ),
@@ -39,7 +37,7 @@ class BottomeSheetImage extends StatelessWidget {
           Positioned(
             bottom:10,
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               width: 300,
               child: BoldText(text: title, color: Colors.white, size: 18)
             )

@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +11,7 @@ void openBottomSheet(
 ){
   showBottomSheet(
     backgroundColor: Colors.black,
-    shape : RoundedRectangleBorder(
+    shape : const RoundedRectangleBorder(
       borderRadius : BorderRadius.only(
         topLeft: Radius.circular(20) , 
         topRight: Radius.circular(20),
@@ -43,7 +42,9 @@ void openBottomSheet(
 
 Future <void> _launchUrl(String urlString) async{
   final Uri url = Uri.parse(urlString);
-  print('Attempting to launch URL : $url');
+  if (kDebugMode) {
+    print('Attempting to launch URL : $url');
+  }
   if(await canLaunchUrl(url)){
     await launchUrl(url , mode: LaunchMode.externalApplication);
   }else{
@@ -66,7 +67,7 @@ class MyBottomSheetLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius : BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -81,7 +82,7 @@ class MyBottomSheetLayout extends StatelessWidget {
             title: title
           ),
           Container(
-            padding:EdgeInsets.all(10),
+            padding:const EdgeInsets.all(10),
             child:ModifiedText(
               text: description, 
               color: Colors.white, 
@@ -91,7 +92,7 @@ class MyBottomSheetLayout extends StatelessWidget {
           InkWell(
             onTap:() => _launchUrl(url),
             child: Container(
-              padding:EdgeInsets.all(12),
+              padding:const EdgeInsets.all(12),
               decoration:BoxDecoration(
                 color: Colors.white12,
                 border: Border.all(
